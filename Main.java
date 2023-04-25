@@ -15,9 +15,9 @@ public class Main {
             System.out.println("\nSelect an option:");
             System.out.println("1. Add item to Queue");
             System.out.println("2. Add item to Stack");
-            System.out.println("3. Remove item from FIFOQUEUE");
+            System.out.println("3. Remove item from QUEUE");
             System.out.println("4. Remove item from Stack");
-            System.out.println("5. Print FIFOQUEUE");
+            System.out.println("5. Print QUEUE");
             System.out.println("6. Print Stack");
             System.out.println("7. Quit\n");
             
@@ -27,10 +27,10 @@ public class Main {
             
             switch (choice) {
                 case 1:
-                    System.out.print("Enter item to add to FIFOQUEUE:");
-                    String itemToAddToFifoQueue = scanner.next();
-                    queue.enqueue(itemToAddToFifoQueue);
-                    System.out.println("Item added to FIFOQUEUE.");
+                    System.out.print("Enter item to add to QUEUE:");
+                    String itemToAddToQueue = scanner.next();
+                    queue.enqueue(itemToAddToQueue);
+                    System.out.println("Item added to QUEUE.");
                     break;
                 case 2:
                     System.out.print("Enter item to add to Stack:");
@@ -39,8 +39,8 @@ public class Main {
                     System.out.println("Item added to Stack.");
                     break;
                 case 3:
-                    String itemRemovedFromFifoQueue = queue.dequeue();
-                    System.out.println("Removed item from FIFOQUEUE: " + itemRemovedFromFifoQueue);
+                    String itemRemovedFromQueue = queue.dequeue();
+                    System.out.println("Removed item from QUEUE: " + itemRemovedFromQueue);
                     break;
                 case 4:
                     String itemRemovedFromStack = stack.dequeue();

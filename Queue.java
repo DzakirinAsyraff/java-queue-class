@@ -14,11 +14,16 @@ public class Queue {
     public String[] enqueue(String value) {
         if (rear == queue.length - 1) {
             String[] newQueue = new String[queue.length * 2];
-            System.arraycopy(queue, 0, newQueue, 0, queue.length);
+            for (int i = 0; i < queue.length; i++) {
+                newQueue[i] = queue[i];
+            }
             queue = newQueue;
+            rear++;
+            queue[rear] = value;
+        } else {
+            rear++;
+            queue[rear] = value;
         }
-        rear++;
-        queue[rear] = value;
         size++;
         return queue;
     }
@@ -28,6 +33,7 @@ public class Queue {
             throw new IllegalStateException("Queue is empty");
         }
         String value = queue[front];
+        queue[front] = null;
         front++;
         size--;
         return value;
@@ -35,7 +41,9 @@ public class Queue {
 
     public String[] getQueue() {
         String[] values = new String[size];
-        System.arraycopy(queue, front, values, 0, size);
+        for (int i = 0; i < size; i++) {
+            values[i] = queue[front + i];
+        }
         return values;
     }
 
